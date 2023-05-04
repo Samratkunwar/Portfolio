@@ -7,12 +7,19 @@ import Head from 'next/head'
 
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-mont' })
 
+export const metadata = {
+  title: 'Samrat Kunwar',
+  description: 'Created usint NextJS and Tailwind CSS',
+}
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <title>{metadata.title}</title>
+        <meta name={metadata.title} content={metadata.description} />
       </Head>
       <main className={`${montserrat.variable} font-mont bg-light w-full min-h-screen`}>
         <NavBar />
