@@ -8,7 +8,8 @@ import { LinkArrow } from '@/components/Icons'
 import HireMe from '@/components/HireMe'
 import lightBulb from '../../public/images/svgs/miscellaneous_icons_1.svg'
 
-const Hero = () => {
+
+export default function Home() {
   return (
     <main className="flex items-center text-dark w-full main-h-screen">
       <Layout className='pt-0'>
@@ -45,5 +46,3 @@ const Hero = () => {
     </main>
   )
 }
-
-export default Hero
