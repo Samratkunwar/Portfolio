@@ -7,10 +7,11 @@ import { useInView, useMotionValue, useSpring } from 'framer-motion'
 import Skills from '@/components/skills'
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
+import Head from 'next/head'
 
 const spH2div_style = 'flex flex-col items-end justify-center'
 const span_style = 'inline-block text-7xl font-bold'
-const h2_style = 'text-xl font-medium capitalized text-dark/75'
+const h2_style = 'text-xl font-medium capitalized text-dark/75 dark:text-light/75'
 
 const AnimatedNumbers = ({value}) => {
   const ref= useRef(null);
@@ -46,20 +47,30 @@ p5:"When I'm not coding or designing, you can find me hiking in the great outdoo
 const about = () => {
   return (
     <>
-      <main className='flex w-full flex-col items-center justify-center'>
+      <Head>
+        <title>Samrat Kunwar | About Page</title>
+        <meta name="description" content="any description" />
+      </Head>
+      <main className='flex w-full flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
           <AnimatedText text='Passion Fuels Purpose!' className='mb-16'/>
           <div className="grid w-full grid-cols-8 gap-16">
             <div className='col-span-3 flex flex-col items-start justify-start'>
-              <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>Biography</h2>
+              <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>Biography</h2>
               <p className='font-medium'>{biography.p1}</p>
               <p className='font-medium my-4'>{biography.p2}</p>
               <p className='font-medium'>{biography.p3}</p>
               <p className='font-medium my-4'>{biography.p4}</p>
             </div>
-            <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8'>
-              <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark'/>
-              <Image src={profilePic} alt="Profile picture" className='w-full h-auto rounded-2xl' />
+            <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light'>
+              <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light'/>
+              <Image src={profilePic} alt="Profile picture" className='w-full h-auto rounded-2xl' 
+                priority
+                sizes="(max-width: 768px) 100vw,
+                      (max-width: 1200px) 50vw,
+                      33vw       
+                "
+              />
             </div>
             <div className='col-span-2 flex flex-col items-end justify-between'>
               <div className={spH2div_style}>
