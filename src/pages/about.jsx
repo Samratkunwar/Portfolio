@@ -8,10 +8,11 @@ import Skills from '@/components/skills'
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
 import Head from 'next/head'
+import TransitionEffect from '@/components/TransitionEffect'
 
-const spH2div_style = 'flex flex-col items-end justify-center'
-const span_style = 'inline-block text-7xl font-bold'
-const h2_style = 'text-xl font-medium capitalized text-dark/75 dark:text-light/75'
+const spH2div_style = 'flex flex-col items-end justify-center xl:items-center'
+const span_style = 'inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl'
+const h2_style = 'text-xl font-medium capitalized text-dark/75 dark:text-light/75 xl:text-center md:text-lg sm:text-base xs:text-sm'
 
 const AnimatedNumbers = ({value}) => {
   const ref= useRef(null);
@@ -51,18 +52,19 @@ const about = () => {
         <title>Samrat Kunwar | About Page</title>
         <meta name="description" content="any description" />
       </Head>
+      <TransitionEffect />
       <main className='flex w-full flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
-          <AnimatedText text='Passion Fuels Purpose!' className='mb-16'/>
-          <div className="grid w-full grid-cols-8 gap-16">
-            <div className='col-span-3 flex flex-col items-start justify-start'>
+          <AnimatedText text='Passion Fuels Purpose!' className='mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8'/>
+          <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
+            <div className='col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8'>
               <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>Biography</h2>
               <p className='font-medium'>{biography.p1}</p>
               <p className='font-medium my-4'>{biography.p2}</p>
               <p className='font-medium'>{biography.p3}</p>
               <p className='font-medium my-4'>{biography.p4}</p>
             </div>
-            <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light'>
+            <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8'>
               <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light'/>
               <Image src={profilePic} alt="Profile picture" className='w-full h-auto rounded-2xl' 
                 priority
@@ -72,7 +74,7 @@ const about = () => {
                 "
               />
             </div>
-            <div className='col-span-2 flex flex-col items-end justify-between'>
+            <div className='col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3'>
               <div className={spH2div_style}>
                 <span className={span_style}><AnimatedNumbers value={15} />+</span>
                 <h2 className={h2_style}>Projects Completed</h2>

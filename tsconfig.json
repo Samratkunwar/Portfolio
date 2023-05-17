@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/about.jsx", "src/pages/projects.jsx", "src/pages/articles.jsx", "src/components/NavBar.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/about.jsx", "src/pages/projects.jsx", "src/pages/articles.jsx", "src/components/NavBar.jsx", "src/components/TransitionEffect.jsx"],
   "exclude": ["node_modules"]
 }

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, {useState} from 'react'
 import Logo from './Logo'
-import {GithubIcon, LinkedInIcon, MoonIcon, SunIcon, TwitterIcon} from './Icons'
+import {DribbbleIcon, GithubIcon, LinkedInIcon, MoonIcon, SunIcon, TwitterIcon} from './Icons'
 import {motion} from 'framer-motion'
 import useThemeSwitcher from './hooks/useThemeSwitcher'
 import { useRouter } from 'next/router'
@@ -55,7 +55,7 @@ const NavBar = () => {
     }
 
   return (
-    <header className="w-full px-32 py-8 fint-medium flex item-center justify-between dark:text-light">
+    <header className="w-full px-32 py-8 fint-medium flex item-center justify-between dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8">
         <button className="flex-col justify-center items-center hidden lg:flex" onClick={clickHandler}>
             <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm  ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
             <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
@@ -142,6 +142,13 @@ const NavBar = () => {
                     >
                         <LinkedInIcon />
                     </motion.a>
+                    <motion.a href="https://dribbble.com/" target={"_blank"}
+                        whileHover={{y:-2}}
+                        className="w-6 ml-3"
+                        whileTap={{scale:0.9}}
+                    >
+                        <DribbbleIcon />
+                    </motion.a>
                     
                     <button
                         onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -160,7 +167,7 @@ const NavBar = () => {
             : null
         }
 
-        <div className="absolute left-[50%] top-2 translate-x-[-50%">
+        <div className="absolute left-[50%] top-2 translate-x-[-50%]">
             <Logo />
         </div>
     </header>
